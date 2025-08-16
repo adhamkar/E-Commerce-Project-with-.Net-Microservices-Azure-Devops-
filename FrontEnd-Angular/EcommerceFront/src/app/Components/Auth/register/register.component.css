@@ -1,0 +1,21 @@
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+.inputs input{
+    width: 250px; /* or your desired width */
+}
+
+.container{
+    margin-top: 6rem;
+}
+ .container>* {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header{
+    margin-top: 1rem;
+}

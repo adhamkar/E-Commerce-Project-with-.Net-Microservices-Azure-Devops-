@@ -1,0 +1,20 @@
+<div class="container">
+<div class="header">
+    <p-button label="Login" [link]="isClicked" (click)="isLoggedIn()" ></p-button>
+    <p-button label="Register" [link]="!isClicked" (click)="isLoggedIn()" ></p-button>
+</div>
+<div class="card flex flex-wrap justify-center items-end gap-4">    
+    <div class="inputs">
+    <p-floatLabel variant="on">
+    <input pInputText id="mail" [(ngModel)]="value1"  />
+    <label for="mail">Mail</label>
+    </p-floatLabel>
+    <p-floatLabel variant="on">
+        <p-password class="pwd" id="mdp" [(ngModel)]="value2" [toggleMask]="true"
+         [feedback]="false"></p-password>
+         <label for="mdp" >Password</label>
+    </p-floatLabel>
+    <p-button label="Sign in" (click)="login()"></p-button>
+    </div>
+</div>
+</div>

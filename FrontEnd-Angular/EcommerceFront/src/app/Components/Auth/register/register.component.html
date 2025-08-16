@@ -1,0 +1,27 @@
+<div class="container">
+<div class="header">
+    <p-button label="Login" [link]="isClicked==false" (click)="isLoggedIn()" ></p-button>
+    <p-button label="Register" [link]="isClicked==true" (click)="isLoggedIn()" ></p-button>
+</div>
+<div class="card flex flex-wrap justify-center items-end gap-4">
+    <div class="inputs">
+    <p-floatLabel variant="on">
+    <input pInputText id="name" [(ngModel)]="value0"  />
+    <label for="name">User Name</label>
+    </p-floatLabel>
+    <p-floatLabel variant="on">
+    <input pInputText id="mail" [(ngModel)]="value1"  />
+    <label for="mail">Mail</label>
+    </p-floatLabel>
+    <p-floatLabel variant="on">
+        <p-password class="pwd" id="mdp" [(ngModel)]="value2" [toggleMask]="true"
+         [feedback]="false"></p-password>
+         <label for="mdp" >Password</label>
+    </p-floatLabel>
+        <p-cascadeSelect [(ngModel)]="selectedGender" (onChange)="onGenderChange($event)"
+        [options]="genders" optionLabel="label"  [optionGroupChildren]="['genders']"
+         [style]="{ minWidth: '14rem' }" placeholder="Select a Gender" />
+    <p-button label="Sign Up" (click)="register()"></p-button>
+    </div>
+</div>
+</div>

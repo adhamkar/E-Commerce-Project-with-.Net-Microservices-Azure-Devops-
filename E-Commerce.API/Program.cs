@@ -12,6 +12,16 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+//cores services
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(builder => {
+        builder.AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader();
+    });
+});
+
 
 builder.Services.AddInfrastructure();
 builder.Services.AddCore();
@@ -47,7 +57,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseCors();
 
 app.UseExceptionHandlerMiddleware();
 app.UseRouting();

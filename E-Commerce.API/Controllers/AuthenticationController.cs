@@ -25,7 +25,7 @@ namespace E_Commerce.API.Controllers
         }
         //[Route("Registration")]
         [HttpPost("register")]
-        public async Task<IActionResult> Register(UserRegisterRequest registerRequest)
+        public async Task<IActionResult> Register([FromBody] UserRegisterRequest registerRequest)
         {
             if (registerRequest == null) return BadRequest("Invalide Registration Data");
             UserAuthentificationResponse? user =await _userservice.Register(registerRequest);
